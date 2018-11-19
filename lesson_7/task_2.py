@@ -2,14 +2,14 @@ from graph_printer import rand_array
 import sys
 
 
-def merge_sort(arr):
-    len_ = len(arr)
+def merge_sort(array):
+    len_ = len(array)
     if len_ >= 2:
         m = int(len_ // 2)
-        left = merge_sort(arr[:m])
-        right = merge_sort(arr[m:])
-        arr = merge_move(left, right)
-    return arr
+        left = merge_sort(array[:m])
+        right = merge_sort(array[m:])
+        array = merge_move(left, right)
+    return array
 
 
 def merge_move(l, r):
@@ -27,6 +27,7 @@ def merge_move(l, r):
 
 if __name__ == "__main__":
     do = {
+        #"help": print_help,
         "merge": merge_sort
     }
     try:
@@ -36,7 +37,7 @@ if __name__ == "__main__":
         print('index error')
         key, min_, max_ = None, None, None
 
-    key, min_, max_ = 'merge', -10, 10
+    # key, min_, max_ = 'merge', -10, 10
     if key:
         if do.get(key) and key is not None and max_ is not None and min_ is not None:
             array = rand_array(min_, max_)
