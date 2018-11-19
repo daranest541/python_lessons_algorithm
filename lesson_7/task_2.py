@@ -2,14 +2,14 @@ from graph_printer import rand_array
 import sys
 
 
-def merge_sort(array):
-    len_ = len(array)
+def merge_sort(arr):
+    len_ = len(arr)
     if len_ >= 2:
         m = int(len_ // 2)
-        left = merge_sort(array[:m])
-        right = merge_sort(array[m:])
-        array = merge_move(left, right)
-    return array
+        left = merge_sort(arr[:m])
+        right = merge_sort(arr[m:])
+        arr = merge_move(left, right)
+    return arr
 
 
 def merge_move(l, r):
